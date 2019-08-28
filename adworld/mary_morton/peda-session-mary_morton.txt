@@ -1,0 +1,5 @@
+break * 0x400960
+break * 0x4008ae
+break printf
+break printf
+
